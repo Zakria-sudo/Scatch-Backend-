@@ -18,7 +18,6 @@ const userSchema = mongoose.Schema({
   },
   picture:String,
   contactno: Number,
-  isadmin: Boolean,
   cart: {
     type: Array,
     default: [],
