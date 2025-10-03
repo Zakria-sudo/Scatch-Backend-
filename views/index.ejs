@@ -8,7 +8,16 @@
     <title>Login - Signup</title>
   </head>
   <body>
- <main class="min-h-screen flex flex-col p-10">
+ 
+ <main class="min-h-screen flex flex-col ">
+     <% if(error.length > 0){%>
+      <div class="w-screen flex justify-center">
+  <div class="w-1/3 bg-red-500 text-white font-semibold px-6 py-3 rounded-b-lg shadow-lg text-center">
+  <h3><%= error %></h3>
+</div>
+</div>
+
+    <%} %>
   <nav class="mb-8">
     <h1 class="text-xl font-bold">Scatch</h1>
   </nav>
@@ -17,19 +26,19 @@
     <!-- Signup -->
     <section class="w-96">
       <h2 class="font-bold text-lg mb-4">Create your account</h2>
-      <form action="/create" method="post" class="flex flex-col flex-wrap gap-4">
-        <input class="w-full px-4 py-3 rounded-lg outline-none bg-zinc-100" type="text" placeholder="Full Name" name="fullname" />
-        <input class="w-full px-4 py-3 rounded-lg outline-none bg-zinc-100" type="email" placeholder="Email" name="email" />
-        <input class="w-full px-4 py-3 rounded-lg outline-none bg-zinc-100" type="password" placeholder="Password" name="password" />
+      <form action="/users/create" method="POST" class="flex flex-col flex-wrap gap-4">
+        <input class="w-full px-4 py-3 rounded-lg outline-none bg-zinc-100 focus:border-blue-500 focus:ring-2 focus:ring-blue-500" type="text" placeholder="Full Name" name="fullname" />
+        <input class="w-full px-4 py-3 rounded-lg outline-none bg-zinc-100 focus:border-blue-500 focus:ring-2 focus:ring-blue-500" type="email" placeholder="Email" name="email" />
+        <input class="w-full px-4 py-3 rounded-lg outline-none bg-zinc-100 focus:border-blue-500 focus:ring-2 focus:ring-blue-500" type="password" placeholder="Password" name="password" />
         <input class="w-52 px-3 py-2 bg-blue-500 rounded-full text-white font-semibold cursor-pointer" type="submit" value="Create My Account" />
       </form>
     </section>
     <!-- Login -->
     <section class="w-96">
       <h2 class="font-bold text-lg mb-4">Login your account</h2>
-      <form action="/login" method="post" class="flex flex-col flex-wrap gap-4">
-        <input class="w-full px-4 py-3 rounded-lg outline-none bg-zinc-100" type="email" placeholder="Email" name="email" />
-        <input class="w-full px-4 py-3 rounded-lg outline-none bg-zinc-100" type="password" placeholder="Password" name="password" />
+      <form action="/users/login" method="POST" class="flex flex-col flex-wrap gap-4">
+        <input class="w-full px-4 py-3 rounded-lg outline-none bg-zinc-100 focus:border-blue-500 focus:ring-2 focus:ring-blue-500" type="email" placeholder="Email" name="email" />
+        <input class="w-full px-4 py-3 rounded-lg outline-none bg-zinc-100 focus:border-blue-500 focus:ring-2 focus:ring-blue-500" type="password" placeholder="Password" name="password" />
         <input class="w-36 px-3 py-2 bg-blue-500 rounded-full text-white font-semibold cursor-pointer" type="submit" value="Login" />
       </form>
     </section>
