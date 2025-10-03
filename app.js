@@ -7,6 +7,7 @@ const usersRouter = require("./routes/usersRouter")
 const productsRouter = require("./routes/productsRouter")
 const ownersRouter = require("./routes/ownersRouter")
 const index = require("./routes/index")
+require("dotenv").config()
 const app = express()
 const port = 3000
 
