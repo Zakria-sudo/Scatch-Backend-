@@ -17,8 +17,9 @@ if (process.env.NODE_ENV == "development")
     // res.send("It is working")
   });
 
-router.get("/", (req, res) => {
-  res.send("Owners Router");
+router.get("/admin", (req, res) => {
+  res.render("createProduct");
 });
 
+router.post("/create-product")
 module.exports = router;

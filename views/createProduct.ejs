@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="../stylesheets/style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container min-h-screen">
+      <nav class="p-5">
+        <h1 class="text-3xl font-bold text-blue-700">Shop.</h1>
+      </nav>
+      <div class=" h-[2px] bg-zinc-500"></div>
+      <div class="flex items-center justify-center min-h-[80vh]">
+      <div class="border border-gray-200 max-w-4xl  p-8 my-2 rounded-md">
+        <div><h2 class="text-xl font-semibold">Create new product</h2></div>
+
+        <form action="/create-product" method="POST" class="mt-4">
+          <div class="py-3">
+            <div class="mb-2"><h3 class="text-lg">Product Details</h3></div>
+            <div class="flex flex-wrap gap-3">
+              <input
+                type="text"
+                name="pName"
+                placeholder="Product Name"
+                class="w-92 outline-none p-2 rounded-md border-2 border-gray-300 bg-zinc-100"
+              />
+              <input
+                type="text"
+                name="pPrice"
+                placeholder="Product Price"
+                class="w-92 outline-none p-2 rounded-md border-2 border-gray-300 bg-zinc-100"
+              />
+              <input
+                type="text"
+                name="pDiscount"
+                placeholder="Product Discount"
+                class="w-92 outline-none p-2 rounded-md border-2 border-gray-300 bg-zinc-100"
+              />
+            </div>
+          </div>
+          <div class="py-3">
+            <div class="mb-2"><h3 class="text-lg">Panel Details</h3></div>
+            <div class="flex flex-wrap gap-3">
+              <input
+                type="text"
+                name="bgcolor"
+                placeholder="Background Color"
+                class="w-92 outline-none p-2 rounded-md border-2 border-gray-300 bg-zinc-100"
+              />
+              <input
+                type="text"
+                name="pcolor"
+                placeholder="Panel Color"
+                class="w-92 outline-none p-2 rounded-md border-2 border-gray-300 bg-zinc-100"
+              />
+              <input
+                type="text"
+                name="tcolor"
+                placeholder="Text Color"
+                class="w-92 outline-none p-2 rounded-md border-2 border-gray-300 bg-zinc-100"
+              />
+            </div>
+            <input
+              type="submit"
+              value="Create Product"
+              class="bg-blue-600 text-white px-6 py-2 rounded-md mt-3 hover:bg-blue-700 cursor-pointer"
+            />
+          </div>
+        </form>
+      </div>
+      </div>
+    </div>
+  </body>
+</html>
