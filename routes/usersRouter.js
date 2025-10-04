@@ -1,9 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const userModel = require("../models/user-model");
-const bcrypt = require("bcrypt");
-const jwt = require("jsonwebtoken");
-const { createUser, loginUser } = require("../controllers/authController");
+const { createUser, loginUser,logoutUser } = require("../controllers/authController");
 
 router.get("/", (req, res) => {
   res.send("Users Router");
@@ -12,4 +9,6 @@ router.get("/", (req, res) => {
 router.post("/create",createUser);
 
 router.post("/login", loginUser);
+
+router.get("/logout",logoutUser)
 module.exports = router;

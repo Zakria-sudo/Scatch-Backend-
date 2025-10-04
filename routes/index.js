@@ -5,10 +5,12 @@ const router = express.Router();
 
 router.get("/", (req, res) => {
   let error = req.flash("error")
-  res.render("index",{error});
+  let success = req.flash("success")
+  res.render("index",{error,success});
 });
+
 router.get("/shop",isLoggedin, (req, res) => {
-  res.render("index");
+  res.render("shop");
 });
 
 module.exports = router;
