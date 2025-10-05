@@ -18,7 +18,8 @@ const ownerSchema = mongoose.Schema({
   },
   picture: String,
   products: {
-    type: Array,
+    type: mongoose.Schema.Types.ObjectId,
+    ref:"product-model",
     default: [],
   },
 });

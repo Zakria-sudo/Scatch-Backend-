@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const ownerModel = require("../models/owner-model");
+const multer  = require('multer') 
 
 if (process.env.NODE_ENV == "development")
   router.post("/create", async (req, res) => {
@@ -18,8 +19,9 @@ if (process.env.NODE_ENV == "development")
   });
 
 router.get("/admin", (req, res) => {
-  res.render("createProduct");
+  let success = req.flash("success")
+  res.render("createProduct",{success});
 });
 
-router.post("/create-product")
+router.post("/create/product",)
 module.exports = router;

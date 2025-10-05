@@ -1,35 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="../stylesheets/style.css" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="min-h-screen">
-        <nav class="flex justify-between items-center px-20 py-7">
-            <h1 class="text-3xl font-bold text-blue-700">Shop.</h1>
-            <div class="flex justify-center gap-15 font-semibold">
-            <ul class="flex gap-3">
-                <li class="p-2">Home</li>
-                <li class="p-2">Products</li>
-            </ul>
-            <ul class="flex gap-3">
-                <li class="p-2">Cart</li>
-                <li class="p-2">My account</li>
-            </ul>
-            </div>
-        </nav>
-        <div class=" h-[2px] bg-zinc-500"></div>
-
-        <div class="flex">
-            <!-- left -->
-             <div class="w-[25vw] h-screen bg-red-400 border border-red-500"></div>
-             <!-- right -->
-              <div class="w-[75vw] h-screen bg-yellow-400 border border-green-500"></div>
+      <nav class="flex justify-between items-center px-20 py-7">
+        <h1 class="text-3xl font-bold text-blue-700">Shop.</h1>
+        <div class="flex justify-center gap-15 font-semibold">
+          <ul class="flex gap-3">
+            <li class="p-2">Home</li>
+            <li class="p-2">Products</li>
+          </ul>
+          <ul class="flex gap-3">
+            <li class="p-2">Cart</li>
+            <li class="p-2">My account</li>
+          </ul>
         </div>
+      </nav>
+      <div class="h-[2px] bg-zinc-500"></div>
+
+      <div class="flex">
+        <!-- left -->
+        <div class="w-[25vw] bg-red-400 p-10">
+          <div class="container">
+            <div class="flex flex-col justify-evenly gap-20 px-10">
+              <div class="flex justify-center items-center gap-4">
+                <h4>sort by:</h4>
+                <button class="bg-gray-300 px-2 py-1 rounded-md">
+                  Popular
+                </button>
+              </div>
+              <div class="types flex">
+                <ul class="flex flex-col gap-3">
+                  <li>New Collection</li>
+                  <li>All Products</li>
+                  <li>Discounted Products</li>
+                </ul>
+              </div>
+              <div class="filter">
+                <div class="flex flex-col gap-3">
+                  <h4>Filter By:</h4>
+                  <a href="">Availability</a>
+                  <a href="">Discount</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- right -->
+        <div class="w-[75vw] bg-yellow-400 p-10">
+          <div class="flex flex-wrap justify-center gap-6 p-6">
+            <div
+              class="w-64 bg-white border border-gray-200 rounded-xl shadow-md overflow-hidden hover:shadow-lg transition duration-300"
+            >
+              <div
+                class="h-48 bg-gray-100 flex items-center justify-center overflow-hidden"
+              >
+                <img
+                  src="/images/sample.jpg"
+                  alt="Product Image"
+                  class="object-cover w-full h-full hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <div class="p-4 flex justify-between items-center">
+                <div>
+                  <h3 class="text-lg font-semibold text-gray-800">
+                    Product Name
+                  </h3>
+                  <p class="text-blue-600 font-bold mt-1">$199.99</p>
+                </div>
+                <button
+                  class="w-9 h-9 flex items-center justify-center bg-blue-600 text-white text-xl rounded-full hover:bg-blue-700 transition duration-200 shadow-md"
+                  title="Add Product"
+                >
+                  +
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-</body>
+  </body>
 </html>
