@@ -8,8 +8,7 @@
     <title>Login - Signup</title>
   </head>
   <body>
-    <main class="min-h-screen flex flex-col">
-      <% if(error && error.length > 0){%>
+    <% if(error && error.length > 0){%>
       <div class="w-screen flex justify-center">
         <div
           class="w-1/5 bg-red-400 text-white px-6 py-3 rounded-b-lg shadow-lg text-center" 
@@ -27,9 +26,11 @@
         </div>
       </div>
       <%} %>
-      <nav class="mb-8">
+    <main class="min-h-screen flex flex-col p-10">
+      
+      <!-- <nav class="mb-8">
         <h1 class="text-xl font-bold">Scatch</h1>
-      </nav>
+      </nav> -->
       <h1 class="text-3xl text-center font-bold">
         Welcome to <span class="text-blue-400">Scatch</span>
       </h1>

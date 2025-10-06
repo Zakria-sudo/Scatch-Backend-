@@ -11,14 +11,15 @@
     <div class="min-h-screen">
       <nav class="flex justify-between items-center px-20 py-7">
         <h1 class="text-3xl font-bold text-blue-700">Shop.</h1>
-        <div class="flex justify-center gap-15 font-semibold">
-          <ul class="flex gap-3">
+        <div class="flex justify-center gap-15 font-semibold ">
+          <ul class="flex gap-3 cursor-pointer">
             <li class="p-2">Home</li>
             <li class="p-2">Products</li>
           </ul>
-          <ul class="flex gap-3">
+          <ul class="flex gap-3 cursor-pointer">
             <li class="p-2">Cart</li>
             <li class="p-2">My account</li>
+            <li class="p-2 text-red-600"><a href="/users/logout">Logout</a></li>
           </ul>
         </div>
       </nav>
@@ -65,12 +66,12 @@
                 <img
                   src="data:image/jpeg;base64,<%= product.image.toString('base64') %>"
                   alt="Product Image"
-                  class="object-cover w-full h-full hover:scale-105 transition-transform duration-300"
+                  class="object-cover h-full hover:scale-105 transition-transform duration-300"
                 />
               </div>
               <div class="p-4 flex justify-between items-center bg-[<%= product.panelcolor%>]">
                 <div class="text-[<%= product.textcolor %>]">
-                  <h3 class="text-lg font-semibold text-gray-800">
+                  <h3 class="text-lg font-semibold ">
                     <%= product.name  %>
                   </h3>
                   <p class="font-bold mt-1">Rs. <%= product.price %></p>
