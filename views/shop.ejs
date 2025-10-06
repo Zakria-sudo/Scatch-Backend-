@@ -26,7 +26,7 @@
 
       <div class="flex">
         <!-- left -->
-        <div class="w-[25vw] bg-red-400 p-10">
+        <div class="w-[25vw] p-10 min-h-[85vh]">
           <div class="container">
             <div class="flex flex-col justify-evenly gap-20 px-10">
               <div class="flex justify-center items-center gap-4">
@@ -53,26 +53,27 @@
           </div>
         </div>
         <!-- right -->
-        <div class="w-[75vw] bg-yellow-400 p-10">
+        <div class="w-[75vw] p-10 bg-zinc-100 min-h-[85vh]">
           <div class="flex flex-wrap justify-center gap-6 p-6">
-            <div
+            <% products.forEach(product => {%>
+              <div
               class="w-64 bg-white border border-gray-200 rounded-xl shadow-md overflow-hidden hover:shadow-lg transition duration-300"
             >
               <div
-                class="h-48 bg-gray-100 flex items-center justify-center overflow-hidden"
+                class="h-48 bg-[<%=product.bgcolor  %>] flex items-center justify-center overflow-hidden"
               >
                 <img
-                  src="/images/sample.jpg"
+                  src="data:image/jpeg;base64,<%= product.image.toString('base64') %>"
                   alt="Product Image"
                   class="object-cover w-full h-full hover:scale-105 transition-transform duration-300"
                 />
               </div>
-              <div class="p-4 flex justify-between items-center">
-                <div>
+              <div class="p-4 flex justify-between items-center bg-[<%= product.panelcolor%>]">
+                <div class="text-[<%= product.textcolor %>]">
                   <h3 class="text-lg font-semibold text-gray-800">
-                    Product Name
+                    <%= product.name  %>
                   </h3>
-                  <p class="text-blue-600 font-bold mt-1">$199.99</p>
+                  <p class="font-bold mt-1">Rs. <%= product.price %></p>
                 </div>
                 <button
                   class="w-9 h-9 flex items-center justify-center bg-blue-600 text-white text-xl rounded-full hover:bg-blue-700 transition duration-200 shadow-md"
@@ -82,6 +83,9 @@
                 </button>
               </div>
             </div>
+            <%}); %>
+            
+        
           </div>
         </div>
       </div>
