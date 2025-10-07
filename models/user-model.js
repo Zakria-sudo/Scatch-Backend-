@@ -18,10 +18,10 @@ const userSchema = mongoose.Schema({
   },
   picture:String,
   contactno: Number,
-  cart: {
-    type: Array,
-    default: [],
-  },
+  cart: [{
+    type : mongoose.Schema.Types.ObjectId,
+    ref : "Product"
+  }],
   orders: {
     type: Array,
     default: [],

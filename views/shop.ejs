@@ -9,16 +9,27 @@
   </head>
   <body>
     <div class="min-h-screen">
+      <% if (success && success.length > 0) { %>
+    <div class="absolute top-5 left-1/2 transform -translate-x-1/2">
+      <div
+        class="bg-green-500 text-white px-6 py-3 rounded-md shadow-lg text-center animate-fade-in-down"
+      >
+        <h3><%= success %></h3>
+      </div>
+    </div>
+  <% } %>
       <nav class="flex justify-between items-center px-20 py-7">
         <h1 class="text-3xl font-bold text-blue-700">Shop.</h1>
-        <div class="flex justify-center gap-15 font-semibold ">
+        <div class="flex justify-center gap-15 font-semibold">
           <ul class="flex gap-3 cursor-pointer">
-            <li class="p-2">Home</li>
-            <li class="p-2">Products</li>
+            <li class="p-2"><a href="">Home</a></li>
+            <li class="p-2"><a href="">Products</a></li>
           </ul>
           <ul class="flex gap-3 cursor-pointer">
-            <li class="p-2">Cart</li>
-            <li class="p-2">My account</li>
+            <li class="p-2"><a href="/cart">Cart</a></li>
+            <li class="p-2"><a href="">My account</a></li>
+          </ul>
+          <ul>
             <li class="p-2 text-red-600"><a href="/users/logout">Logout</a></li>
           </ul>
         </div>
@@ -57,11 +68,11 @@
         <div class="w-[75vw] p-10 bg-zinc-100 min-h-[85vh]">
           <div class="flex flex-wrap justify-center gap-6 p-6">
             <% products.forEach(product => {%>
-              <div
+            <div
               class="w-64 bg-white border border-gray-200 rounded-xl shadow-md overflow-hidden hover:shadow-lg transition duration-300"
             >
               <div
-                class="h-48 bg-[<%=product.bgcolor  %>] flex items-center justify-center overflow-hidden"
+                class="h-48 bg-[<%=product.bgcolor %>] flex items-center justify-center overflow-hidden"
               >
                 <img
                   src="data:image/jpeg;base64,<%= product.image.toString('base64') %>"
@@ -69,24 +80,22 @@
                   class="object-cover h-full hover:scale-105 transition-transform duration-300"
                 />
               </div>
-              <div class="p-4 flex justify-between items-center bg-[<%= product.panelcolor%>]">
+              <div
+                class="p-4 flex justify-between items-center bg-[<%= product.panelcolor%>]"
+              >
                 <div class="text-[<%= product.textcolor %>]">
-                  <h3 class="text-lg font-semibold ">
-                    <%= product.name  %>
-                  </h3>
+                  <h3 class="text-lg font-semibold"><%= product.name %></h3>
                   <p class="font-bold mt-1">Rs. <%= product.price %></p>
                 </div>
-                <button
+                <a
                   class="w-9 h-9 flex items-center justify-center bg-blue-600 text-white text-xl rounded-full hover:bg-blue-700 transition duration-200 shadow-md"
-                  title="Add Product"
+                 href="/add-to-cart/<%=product._id  %>"
                 >
                   +
-                </button>
+                </a>
               </div>
             </div>
             <%}); %>
-            
-        
           </div>
         </div>
       </div>
